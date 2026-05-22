@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calculateur Moyenne S2</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+
+            min-height:100vh;
+
+            display:flex;
+
+            justify-content:center;
+
+            align-items:center;
+
+            background:linear-gradient(135deg,#141e30,#243b55);
+
+            padding:20px;
+        }
+
+        .container{
+
+            width:700px;
+
+            max-width:100%;
+
+            padding:40px;
+
+            border-radius:30px;
+
+            background:rgba(255,255,255,0.12);
+
+            backdrop-filter:blur(15px);
+
+            box-shadow:0 8px 32px rgba(0,0,0,0.35);
+
+            text-align:center;
+
+            animation:fade 1.2s ease;
+        }
+
+        .prof{
+
+            width:140px;
+
+            height:140px;
+
+            border-radius:50%;
+
+            object-fit:cover;
+
+            border:5px solid white;
+
+            margin-bottom:20px;
+
+            box-shadow:0 0 25px rgba(255,255,255,0.5);
+        }
+
+        h1{
+
+            color:white;
+
+            margin-bottom:30px;
+
+            font-size:40px;
+        }
+
+        .module{
+
+            background:rgba(255,255,255,0.08);
+
+            padding:20px;
+
+            border-radius:20px;
+
+            margin-bottom:20px;
+        }
+
+        .module h2{
+
+            color:white;
+
+            margin-bottom:15px;
+
+            font-size:22px;
+        }
+
+        input{
+
+            width:42%;
+
+            padding:14px;
+
+            margin:8px;
+
+            border:none;
+
+            border-radius:12px;
+
+            text-align:center;
+
+            font-size:17px;
+
+            outline:none;
+        }
+
+        button{
+
+            margin-top:30px;
+
+            padding:16px 40px;
+
+            border:none;
+
+            border-radius:15px;
+
+            background:white;
+
+            color:#243b55;
+
+            font-size:20px;
+
+            font-weight:bold;
+
+            cursor:pointer;
+
+            transition:0.3s;
+        }
+
+        button:hover{
+
+            transform:scale(1.08);
+        }
+
+        #resultat{
+
+            margin-top:35px;
+
+            font-size:35px;
+
+            font-weight:bold;
+        }
+
+        .vert{
+
+            color:#00ff88;
+        }
+
+        .rouge{
+
+            color:#ff4d4d;
+        }
+
+        @keyframes fade{
+
+            from{
+
+                opacity:0;
+
+                transform:translateY(40px);
+            }
+
+            to{
+
+                opacity:1;
+
+                transform:translateY(0);
+            }
+        }
+
+        @media(max-width:768px){
+
+            .container{
+
+                width:100%;
+
+                padding:20px;
+            }
+
+            h1{
+
+                font-size:28px;
+            }
+
+            .module h2{
+
+                font-size:18px;
+            }
+
+            input{
+
+                width:90%;
+
+                font-size:16px;
+            }
+
+            button{
+
+                width:90%;
+
+                font-size:18px;
+            }
+
+            .prof{
+
+                width:110px;
+
+                height:110px;
+            }
+
+            #resultat{
+
+                font-size:26px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <img src="{{ url_for('static', filename='images/prof.jpg') }}" class="prof">
+
+        <h1>Calculateur Moyenne S2</h1>
+
+        <div class="module">
+
+            <h2>Composites (Coef 3)</h2>
+
+            <input type="number" min="0" max="20" id="td1" placeholder="TD">
+
+            <input type="number" min="0" max="20" id="exam1" placeholder="Examen">
+
+        </div>
+
+        <div class="module">
+
+            <h2>Polymères (Coef 2)</h2>
+
+            <input type="number" min="0" max="20" id="td2" placeholder="TD">
+
+            <input type="number" min="0" max="20" id="exam2" placeholder="Examen">
+
+        </div>
+
+        <div class="module">
+
+            <h2>Diffusion (Coef 2)</h2>
+
+            <input type="number" min="0" max="20" id="td3" placeholder="TD">
+
+            <input type="number" min="0" max="20" id="exam3" placeholder="Examen">
+
+        </div>
+
+        <div class="module">
+
+            <h2>Mécanique de la rupture (Coef 2)</h2>
+
+            <input type="number" min="0" max="20" id="td4" placeholder="TD">
+
+            <input type="number" min="0" max="20" id="exam4" placeholder="Examen">
+
+        </div>
+
+        <div class="module">
+
+            <h2>MEF 2 (Coef 2)</h2>
+
+            <input type="number" min="0" max="20" id="td5" placeholder="TD">
+
+            <input type="number" min="0" max="20" id="exam5" placeholder="Examen">
+
+        </div>
+
+        <div class="module">
+
+            <h2>Traitements Thermiques (Coef 2)</h2>
+
+            <input type="number" min="0" max="20" id="td6" placeholder="TD">
+
+            <input type="number" min="0" max="20" id="exam6" placeholder="Examen">
+
+        </div>
+
+        <div class="module">
+
+            <h2>IA Appliquée (Coef 2)</h2>
+
+            <input type="number" min="0" max="20" id="td7" placeholder="TD">
+
+            <input type="number" min="0" max="20" id="exam7" placeholder="Examen">
+
+        </div>
+
+        <div class="module">
+
+            <h2>TP Essais Mécaniques 2 (Coef 1)</h2>
+
+            <input type="number" min="0" max="20" id="tp" placeholder="Note TP">
+
+        </div>
+
+        <div class="module">
+
+            <h2>Respect des Normes (Coef 1)</h2>
+
+            <input type="number" min="0" max="20" id="normes" placeholder="Note">
+
+        </div>
+
+        <button onclick="calculer()">
+            Calculer la Moyenne
+        </button>
+
+        <h2 id="resultat"></h2>
+
+    </div>
+
+    <script>
+
+        function calculer(){
+
+            let total = 0;
+
+            total += ((parseFloat(td1.value)||0)*0.4 + (parseFloat(exam1.value)||0)*0.6) * 3;
+
+            total += ((parseFloat(td2.value)||0)*0.4 + (parseFloat(exam2.value)||0)*0.6) * 2;
+
+            total += ((parseFloat(td3.value)||0)*0.4 + (parseFloat(exam3.value)||0)*0.6) * 2;
+
+            total += ((parseFloat(td4.value)||0)*0.4 + (parseFloat(exam4.value)||0)*0.6) * 2;
+
+            total += ((parseFloat(td5.value)||0)*0.4 + (parseFloat(exam5.value)||0)*0.6) * 2;
+
+            total += ((parseFloat(td6.value)||0)*0.4 + (parseFloat(exam6.value)||0)*0.6) * 2;
+
+            total += ((parseFloat(td7.value)||0)*0.4 + (parseFloat(exam7.value)||0)*0.6) * 2;
+
+            total += (parseFloat(tp.value)||0);
+
+            total += (parseFloat(normes.value)||0);
+
+            let moyenne = total / 17;
+
+            let resultat = document.getElementById("resultat");
+
+            resultat.innerHTML = "Moyenne S2 = " + moyenne.toFixed(2);
+
+            if(moyenne >= 10){
+
+                resultat.className = "vert";
+            }
+
+            else{
+
+                resultat.className = "rouge";
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
