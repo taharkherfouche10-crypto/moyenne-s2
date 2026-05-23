@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Calculateur Moyenne S2</title>
@@ -12,18 +15,12 @@
             margin:0;
             padding:0;
             box-sizing:border-box;
-            font-family:Arial, Helvetica, sans-serif;
+            font-family:Arial;
         }
 
         body{
 
-            background:
-            linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.9)),
-            url("https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1920");
-
-            background-size:cover;
-            background-position:center;
-            background-attachment:fixed;
+            background:linear-gradient(to right,#050816,#0a0f2c);
 
             color:white;
 
@@ -32,80 +29,18 @@
             padding:30px;
         }
 
-        .container{
-
-            max-width:1400px;
-
-            margin:auto;
-        }
-
-        .navbar{
-
-            width:100%;
-
-            padding:20px;
-
-            border-radius:20px;
-
-            background:rgba(255,255,255,0.08);
-
-            backdrop-filter:blur(12px);
-
-            display:flex;
-
-            justify-content:space-between;
-
-            align-items:center;
-
-            margin-bottom:40px;
-
-            border:1px solid rgba(255,255,255,0.1);
-        }
-
-        .logo{
-
-            font-size:32px;
-
-            font-weight:bold;
-
-            color:#7c5cff;
-        }
-
-        .menu{
-
-            display:flex;
-
-            gap:30px;
-        }
-
-        .menu a{
-
-            color:white;
-
-            text-decoration:none;
-
-            transition:0.3s;
-        }
-
-        .menu a:hover{
-
-            color:#7c5cff;
-        }
-
-        .hero{
+        .title{
 
             text-align:center;
 
-            margin-bottom:50px;
+            margin-top:20px;
 
             animation:fade 1.5s ease;
         }
 
-        .hero h1{
+        .title h1{
 
-            font-size:65px;
-
-            margin-bottom:15px;
+            font-size:60px;
 
             background:linear-gradient(to right,#4facfe,#a855f7);
 
@@ -114,19 +49,23 @@
             -webkit-text-fill-color:transparent;
         }
 
-        .hero p{
+        .title p{
 
-            font-size:24px;
+            margin-top:15px;
 
-            color:#ddd;
+            font-size:22px;
+
+            color:#ccc;
         }
 
-        .prof-box{
+        .prof{
+
+            text-align:center;
 
             margin-top:40px;
         }
 
-        .prof-box img{
+        .prof img{
 
             width:170px;
 
@@ -138,30 +77,35 @@
 
             border:5px solid #7c5cff;
 
-            box-shadow:0 0 30px rgba(124,92,255,0.8);
+            box-shadow:0 0 25px #7c5cff;
 
             transition:0.4s;
         }
 
-        .prof-box img:hover{
+        .prof img:hover{
 
             transform:scale(1.08);
         }
 
-        .prof-box h2{
+        .prof h2{
 
-            margin-top:15px;
+            margin-top:20px;
 
             font-size:30px;
         }
 
-        .promo-title{
+        .promo{
+
+            margin-top:70px;
+        }
+
+        .promo h1{
 
             text-align:center;
 
-            font-size:45px;
+            margin-bottom:40px;
 
-            margin:50px 0;
+            font-size:45px;
 
             color:#7c5cff;
         }
@@ -172,42 +116,42 @@
 
             justify-content:center;
 
-            flex-wrap:wrap;
-
             gap:30px;
+
+            flex-wrap:wrap;
         }
 
         .student{
 
-            width:260px;
-
-            padding:25px;
-
-            border-radius:25px;
+            width:240px;
 
             background:rgba(255,255,255,0.08);
 
-            backdrop-filter:blur(15px);
+            border-radius:25px;
 
-            border:1px solid rgba(255,255,255,0.1);
+            padding:25px;
 
             text-align:center;
 
+            backdrop-filter:blur(15px);
+
             transition:0.4s;
+
+            border:1px solid rgba(255,255,255,0.1);
         }
 
         .student:hover{
 
             transform:translateY(-10px) scale(1.05);
 
-            box-shadow:0 0 25px rgba(124,92,255,0.7);
+            box-shadow:0 0 25px #7c5cff;
         }
 
         .student img{
 
-            width:150px;
+            width:140px;
 
-            height:150px;
+            height:140px;
 
             border-radius:50%;
 
@@ -228,9 +172,9 @@
             color:#bbb;
         }
 
-        .calc-section{
+        .calculator{
 
-            margin-top:70px;
+            margin-top:80px;
 
             display:grid;
 
@@ -239,8 +183,8 @@
             gap:30px;
         }
 
-        .calc-box,
-        .result-box{
+        .left,
+        .right{
 
             background:rgba(255,255,255,0.08);
 
@@ -253,10 +197,10 @@
             border:1px solid rgba(255,255,255,0.1);
         }
 
-        .calc-box h2,
-        .result-box h2{
+        .left h2,
+        .right h2{
 
-            margin-bottom:25px;
+            margin-bottom:30px;
 
             color:#7c5cff;
         }
@@ -270,7 +214,7 @@
 
             display:block;
 
-            margin-bottom:8px;
+            margin-bottom:10px;
         }
 
         .module input{
@@ -283,13 +227,13 @@
 
             border-radius:15px;
 
-            outline:none;
-
             background:rgba(255,255,255,0.1);
 
             color:white;
 
-            font-size:16px;
+            outline:none;
+
+            font-size:18px;
         }
 
         button{
@@ -306,11 +250,11 @@
 
             color:white;
 
-            font-size:18px;
+            font-size:20px;
 
             cursor:pointer;
 
-            transition:0.3s;
+            transition:0.4s;
         }
 
         button:hover{
@@ -320,28 +264,26 @@
 
         .result{
 
-            font-size:70px;
-
             text-align:center;
 
-            margin-top:40px;
+            font-size:70px;
 
-            font-weight:bold;
+            margin-top:50px;
 
             color:#7c5cff;
+
+            font-weight:bold;
         }
 
         footer{
 
-            margin-top:80px;
-
             text-align:center;
 
-            padding:25px;
+            margin-top:80px;
 
             color:#aaa;
 
-            font-size:18px;
+            font-size:20px;
         }
 
         footer span{
@@ -370,19 +312,14 @@
 
         @media(max-width:900px){
 
-            .hero h1{
-
-                font-size:45px;
-            }
-
-            .calc-section{
+            .calculator{
 
                 grid-template-columns:1fr;
             }
 
-            .menu{
+            .title h1{
 
-                display:none;
+                font-size:40px;
             }
         }
 
@@ -390,140 +327,214 @@
 
 </head>
 
+<script>
+
+function calculer(){
+
+    let total = 0;
+
+    total += (((parseFloat(td1.value)||0)*0.4)+((parseFloat(ex1.value)||0)*0.6))*3;
+
+    total += (((parseFloat(td2.value)||0)*0.4)+((parseFloat(ex2.value)||0)*0.6))*2;
+
+    total += (((parseFloat(td3.value)||0)*0.4)+((parseFloat(ex3.value)||0)*0.6))*2;
+
+    total += (((parseFloat(td4.value)||0)*0.4)+((parseFloat(ex4.value)||0)*0.6))*2;
+
+    total += (((parseFloat(td5.value)||0)*0.4)+((parseFloat(ex5.value)||0)*0.6))*2;
+
+    total += (((parseFloat(td6.value)||0)*0.4)+((parseFloat(ex6.value)||0)*0.6))*2;
+
+    total += (((parseFloat(td7.value)||0)*0.4)+((parseFloat(ex7.value)||0)*0.6))*2;
+
+    total += (parseFloat(tp.value)||0);
+
+    total += (parseFloat(normes.value)||0);
+
+    let moyenne = total / 17;
+
+    if(moyenne < 0){
+
+        moyenne = 0;
+    }
+
+    if(moyenne > 20){
+
+        moyenne = 20;
+    }
+
+    let result = document.getElementById("result");
+
+    result.innerHTML = moyenne.toFixed(2);
+
+    if(moyenne >= 10){
+
+        result.style.color = "#00ff88";
+    }
+
+    else{
+
+        result.style.color = "#ff4d4d";
+    }
+
+}
+
+</script>
 <body>
 
-<div class="container">
+    <div class="title">
 
-    <div class="navbar">
-
-        <div class="logo">
-            🎓 Calculateur Moyenne S2
-        </div>
-
-        <div class="menu">
-
-            <a href="#">Accueil</a>
-
-            <a href="#">Calculateur</a>
-
-            <a href="#">Promotion</a>
-
-            <a href="#">À propos</a>
-
-        </div>
-
-    </div>
-
-    <div class="hero">
-
-        <h1>Calculateur de Moyenne Semestre 2</h1>
+        <h1>Calculateur Moyenne Semestre 2</h1>
 
         <p>Master 2 Génie des Matériaux Mécaniques</p>
 
-        <div class="prof-box">
+    </div>
 
-            <img src="{{ url_for('static', filename='images/prof.jpg') }}">
+    <div class="prof">
 
-            <h2>Notre Professeur 👨‍🏫</h2>
+        <img src="{{ url_for('static', filename='images/prof.jpg') }}">
 
-        </div>
+        <h2>Notre Professeur 👨‍🏫</h2>
 
     </div>
 
-    <h1 class="promo-title">
-        Notre Promotion 🎓
-    </h1>
+    <div class="promo">
 
-    <div class="cards">
+        <h1>Notre Promotion 🎓</h1>
 
-        <div class="student">
+        <div class="cards">
 
-            <img src="{{ url_for('static', filename='images/anis samoun.jpg') }}">
+            <div class="student">
 
-            <h2>Anis Samoun</h2>
+                <img src="{{ url_for('static', filename='images/anis samoun.jpg') }}">
 
-            <p>Étudiant Master 2</p>
+                <h2>Anis Samoun</h2>
 
-        </div>
+                <p>Étudiant Master 2</p>
 
-        <div class="student">
-
-            <img src="{{ url_for('static', filename='images/delegui.jpg') }}">
-
-            <h2>Delegui</h2>
-
-            <p>Étudiant Master 2</p>
-
-        </div>
-
-        <div class="student">
-
-            <img src="{{ url_for('static', filename='images/lyes messoudi.jpg') }}">
-
-            <h2>Lyes Messoudi</h2>
-
-            <p>Étudiant Master 2</p>
-
-        </div>
-
-        <div class="student">
-
-            <img src="{{ url_for('static', filename='images/mamiiin.jpg') }}">
-
-            <h2>Mamiiin</h2>
-
-            <p>Étudiant Master 2</p>
-
-        </div>
-
-    </div>
-
-    <div class="calc-section">
-
-        <div class="calc-box">
-
-            <h2>📘 Calculer votre moyenne</h2>
-
-            <div class="module">
-
-                <label>Note TD</label>
-
-                <input type="number" min="0" max="20">
             </div>
 
-            <div class="module">
+            <div class="student">
 
-                <label>Note Examen</label>
+                <img src="{{ url_for('static', filename='images/delegui.jpg') }}">
 
-                <input type="number" min="0" max="20">
+                <h2>Delegui</h2>
+
+                <p>Étudiant Master 2</p>
+
             </div>
 
-            <button>
-                Calculer
-            </button>
+            <div class="student">
 
-        </div>
+                <img src="{{ url_for('static', filename='images/lyes messoudi.jpg') }}">
 
-        <div class="result-box">
+                <h2>Lyes Messoudi</h2>
 
-            <h2>🏆 Résultat</h2>
+                <p>Étudiant Master 2</p>
 
-            <div class="result">
-                0.00
+            </div>
+
+            <div class="student">
+
+                <img src="{{ url_for('static', filename='images/mamiiin.jpg') }}">
+
+                <h2>Mamiiin</h2>
+
+                <p>Étudiant Master 2</p>
+
             </div>
 
         </div>
 
     </div>
+
+<div class="calculator">
+
+    <div class="left">
+
+        <h2>📘 Calculateur de Moyenne</h2>
+
+        <div class="module">
+            <label>Composites (Coef 3)</label>
+            <input type="number" min="0" max="20" id="td1" placeholder="TD">
+            <input type="number" min="0" max="20" id="ex1" placeholder="Examen">
+        </div>
+
+        <div class="module">
+            <label>Polymères (Coef 2)</label>
+            <input type="number" min="0" max="20" id="td2" placeholder="TD">
+            <input type="number" min="0" max="20" id="ex2" placeholder="Examen">
+        </div>
+
+        <div class="module">
+            <label>Diffusion (Coef 2)</label>
+            <input type="number" min="0" max="20" id="td3" placeholder="TD">
+            <input type="number" min="0" max="20" id="ex3" placeholder="Examen">
+        </div>
+
+        <div class="module">
+            <label>Mécanique Rupture (Coef 2)</label>
+            <input type="number" min="0" max="20" id="td4" placeholder="TD">
+            <input type="number" min="0" max="20" id="ex4" placeholder="Examen">
+        </div>
+
+        <div class="module">
+            <label>MEF 2 (Coef 2)</label>
+            <input type="number" min="0" max="20" id="td5" placeholder="TD">
+            <input type="number" min="0" max="20" id="ex5" placeholder="Examen">
+        </div>
+
+        <div class="module">
+            <label>Traitements Thermiques (Coef 2)</label>
+            <input type="number" min="0" max="20" id="td6" placeholder="TD">
+            <input type="number" min="0" max="20" id="ex6" placeholder="Examen">
+        </div>
+
+        <div class="module">
+            <label>IA Appliquée (Coef 2)</label>
+            <input type="number" min="0" max="20" id="td7" placeholder="TD">
+            <input type="number" min="0" max="20" id="ex7" placeholder="Examen">
+        </div>
+
+        <div class="module">
+            <label>TP Essais Mécaniques (Coef 1)</label>
+            <input type="number" min="0" max="20" id="tp">
+        </div>
+
+        <div class="module">
+            <label>Respect des Normes (Coef 1)</label>
+            <input type="number" min="0" max="20" id="normes">
+        </div>
+
+        <button onclick="calculer()">
+
+            Calculer la Moyenne
+
+        </button>
+
+    </div>
+
+    <div class="right">
+
+        <h2>🏆 Résultat</h2>
+
+        <div class="result" id="result">
+
+            0.00
+
+        </div>
+
+    </div>
+
+</div>
 
     <footer>
 
         Sponsor officiel de la promotion :
-        <span>Master 2 Génie des Matériaux Mécaniques</span>
+        <span>Master 2 GMM 2026</span>
 
     </footer>
 
-</div>
-
 </body>
+
 </html>
