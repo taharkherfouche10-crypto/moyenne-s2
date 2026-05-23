@@ -1,104 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Calculateur Moyenne S2</title>
 
     <style>
-        .promotion{
-
-    margin-top:70px;
-
-    text-align:center;
-}
-
-.promo-title{
-
-    color:white;
-
-    font-size:40px;
-
-    margin-bottom:40px;
-
-    animation:fade 2s ease;
-}
-
-.cards{
-
-    display:flex;
-
-    justify-content:center;
-
-    flex-wrap:wrap;
-
-    gap:30px;
-}
-
-.student{
-
-    width:220px;
-
-    padding:20px;
-
-    border-radius:25px;
-
-    background:rgba(255,255,255,0.1);
-
-    backdrop-filter:blur(15px);
-
-    transition:0.4s;
-
-    box-shadow:0 0 20px rgba(0,0,0,0.3);
-}
-
-.student:hover{
-
-    transform:translateY(-10px) scale(1.05);
-}
-
-.student img{
-
-    width:140px;
-
-    height:140px;
-
-    object-fit:cover;
-
-    border-radius:50%;
-
-    border:4px solid white;
-
-    margin-bottom:15px;
-}
-
-.student h2{
-
-    color:white;
-
-    font-size:22px;
-}
-
-@keyframes fade{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(20px);
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-    }
-}
 
         *{
             margin:0;
@@ -109,122 +17,296 @@
 
         body{
 
+            background:
+            linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.9)),
+            url("https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1920");
+
+            background-size:cover;
+            background-position:center;
+            background-attachment:fixed;
+
+            color:white;
+
             min-height:100vh;
 
-            display:flex;
-
-            justify-content:center;
-
-            align-items:center;
-
-            background:linear-gradient(135deg,#141e30,#243b55);
-
-            padding:20px;
+            padding:30px;
         }
 
         .container{
 
-            width:700px;
+            max-width:1400px;
 
-            max-width:100%;
-
-            padding:40px;
-
-            border-radius:30px;
-
-            background:rgba(255,255,255,0.12);
-
-            backdrop-filter:blur(15px);
-
-            box-shadow:0 8px 32px rgba(0,0,0,0.35);
-
-            text-align:center;
-
-            animation:fade 1.2s ease;
+            margin:auto;
         }
 
-        .prof{
+        .navbar{
 
-            width:140px;
-
-            height:140px;
-
-            border-radius:50%;
-
-            object-fit:cover;
-
-            border:5px solid white;
-
-            margin-bottom:20px;
-
-            box-shadow:0 0 25px rgba(255,255,255,0.5);
-        }
-
-        h1{
-
-            color:white;
-
-            margin-bottom:30px;
-
-            font-size:40px;
-        }
-
-        .module{
-
-            background:rgba(255,255,255,0.08);
+            width:100%;
 
             padding:20px;
 
             border-radius:20px;
 
-            margin-bottom:20px;
+            background:rgba(255,255,255,0.08);
+
+            backdrop-filter:blur(12px);
+
+            display:flex;
+
+            justify-content:space-between;
+
+            align-items:center;
+
+            margin-bottom:40px;
+
+            border:1px solid rgba(255,255,255,0.1);
         }
 
-        .module h2{
+        .logo{
+
+            font-size:32px;
+
+            font-weight:bold;
+
+            color:#7c5cff;
+        }
+
+        .menu{
+
+            display:flex;
+
+            gap:30px;
+        }
+
+        .menu a{
 
             color:white;
 
-            margin-bottom:15px;
+            text-decoration:none;
 
-            font-size:22px;
+            transition:0.3s;
         }
 
-        input{
+        .menu a:hover{
 
-            width:42%;
+            color:#7c5cff;
+        }
 
-            padding:14px;
-
-            margin:8px;
-
-            border:none;
-
-            border-radius:12px;
+        .hero{
 
             text-align:center;
 
-            font-size:17px;
+            margin-bottom:50px;
 
-            outline:none;
+            animation:fade 1.5s ease;
         }
 
-        button{
+        .hero h1{
 
-            margin-top:30px;
+            font-size:65px;
 
-            padding:16px 40px;
+            margin-bottom:15px;
+
+            background:linear-gradient(to right,#4facfe,#a855f7);
+
+            -webkit-background-clip:text;
+
+            -webkit-text-fill-color:transparent;
+        }
+
+        .hero p{
+
+            font-size:24px;
+
+            color:#ddd;
+        }
+
+        .prof-box{
+
+            margin-top:40px;
+        }
+
+        .prof-box img{
+
+            width:170px;
+
+            height:170px;
+
+            border-radius:50%;
+
+            object-fit:cover;
+
+            border:5px solid #7c5cff;
+
+            box-shadow:0 0 30px rgba(124,92,255,0.8);
+
+            transition:0.4s;
+        }
+
+        .prof-box img:hover{
+
+            transform:scale(1.08);
+        }
+
+        .prof-box h2{
+
+            margin-top:15px;
+
+            font-size:30px;
+        }
+
+        .promo-title{
+
+            text-align:center;
+
+            font-size:45px;
+
+            margin:50px 0;
+
+            color:#7c5cff;
+        }
+
+        .cards{
+
+            display:flex;
+
+            justify-content:center;
+
+            flex-wrap:wrap;
+
+            gap:30px;
+        }
+
+        .student{
+
+            width:260px;
+
+            padding:25px;
+
+            border-radius:25px;
+
+            background:rgba(255,255,255,0.08);
+
+            backdrop-filter:blur(15px);
+
+            border:1px solid rgba(255,255,255,0.1);
+
+            text-align:center;
+
+            transition:0.4s;
+        }
+
+        .student:hover{
+
+            transform:translateY(-10px) scale(1.05);
+
+            box-shadow:0 0 25px rgba(124,92,255,0.7);
+        }
+
+        .student img{
+
+            width:150px;
+
+            height:150px;
+
+            border-radius:50%;
+
+            object-fit:cover;
+
+            border:4px solid white;
+
+            margin-bottom:20px;
+        }
+
+        .student h2{
+
+            margin-bottom:10px;
+        }
+
+        .student p{
+
+            color:#bbb;
+        }
+
+        .calc-section{
+
+            margin-top:70px;
+
+            display:grid;
+
+            grid-template-columns:2fr 1fr;
+
+            gap:30px;
+        }
+
+        .calc-box,
+        .result-box{
+
+            background:rgba(255,255,255,0.08);
+
+            padding:30px;
+
+            border-radius:25px;
+
+            backdrop-filter:blur(15px);
+
+            border:1px solid rgba(255,255,255,0.1);
+        }
+
+        .calc-box h2,
+        .result-box h2{
+
+            margin-bottom:25px;
+
+            color:#7c5cff;
+        }
+
+        .module{
+
+            margin-bottom:20px;
+        }
+
+        .module label{
+
+            display:block;
+
+            margin-bottom:8px;
+        }
+
+        .module input{
+
+            width:100%;
+
+            padding:15px;
 
             border:none;
 
             border-radius:15px;
 
-            background:white;
+            outline:none;
 
-            color:#243b55;
+            background:rgba(255,255,255,0.1);
 
-            font-size:20px;
+            color:white;
 
-            font-weight:bold;
+            font-size:16px;
+        }
+
+        button{
+
+            width:100%;
+
+            padding:18px;
+
+            border:none;
+
+            border-radius:15px;
+
+            background:linear-gradient(to right,#4facfe,#7c5cff);
+
+            color:white;
+
+            font-size:18px;
 
             cursor:pointer;
 
@@ -233,26 +315,40 @@
 
         button:hover{
 
-            transform:scale(1.08);
+            transform:scale(1.03);
         }
 
-        #resultat{
+        .result{
 
-            margin-top:35px;
+            font-size:70px;
 
-            font-size:35px;
+            text-align:center;
+
+            margin-top:40px;
 
             font-weight:bold;
+
+            color:#7c5cff;
         }
 
-        .vert{
+        footer{
 
-            color:#00ff88;
+            margin-top:80px;
+
+            text-align:center;
+
+            padding:25px;
+
+            color:#aaa;
+
+            font-size:18px;
         }
 
-        .rouge{
+        footer span{
 
-            color:#ff4d4d;
+            color:#7c5cff;
+
+            font-weight:bold;
         }
 
         @keyframes fade{
@@ -261,7 +357,7 @@
 
                 opacity:0;
 
-                transform:translateY(40px);
+                transform:translateY(20px);
             }
 
             to{
@@ -272,49 +368,21 @@
             }
         }
 
-        @media(max-width:768px){
+        @media(max-width:900px){
 
-            .container{
+            .hero h1{
 
-                width:100%;
-
-                padding:20px;
+                font-size:45px;
             }
 
-            h1{
+            .calc-section{
 
-                font-size:28px;
+                grid-template-columns:1fr;
             }
 
-            .module h2{
+            .menu{
 
-                font-size:18px;
-            }
-
-            input{
-
-                width:90%;
-
-                font-size:16px;
-            }
-
-            button{
-
-                width:90%;
-
-                font-size:18px;
-            }
-
-            .prof{
-
-                width:110px;
-
-                height:110px;
-            }
-
-            #resultat{
-
-                font-size:26px;
+                display:none;
             }
         }
 
@@ -324,178 +392,138 @@
 
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <img src="{{ url_for('static', filename='images/prof.jpg') }}" class="prof">
+    <div class="navbar">
 
-        <h1>Calculateur Moyenne S2</h1>
-
-        <div class="module">
-
-            <h2>Composites (Coef 3)</h2>
-
-            <input type="number" min="0" max="20" id="td1" placeholder="TD">
-
-            <input type="number" min="0" max="20" id="exam1" placeholder="Examen">
-
+        <div class="logo">
+            🎓 Calculateur Moyenne S2
         </div>
 
-        <div class="module">
+        <div class="menu">
 
-            <h2>Polymères (Coef 2)</h2>
+            <a href="#">Accueil</a>
 
-            <input type="number" min="0" max="20" id="td2" placeholder="TD">
+            <a href="#">Calculateur</a>
 
-            <input type="number" min="0" max="20" id="exam2" placeholder="Examen">
+            <a href="#">Promotion</a>
 
-        </div>
-
-        <div class="module">
-
-            <h2>Diffusion (Coef 2)</h2>
-
-            <input type="number" min="0" max="20" id="td3" placeholder="TD">
-
-            <input type="number" min="0" max="20" id="exam3" placeholder="Examen">
+            <a href="#">À propos</a>
 
         </div>
-
-        <div class="module">
-
-            <h2>Mécanique de la rupture (Coef 2)</h2>
-
-            <input type="number" min="0" max="20" id="td4" placeholder="TD">
-
-            <input type="number" min="0" max="20" id="exam4" placeholder="Examen">
-
-        </div>
-
-        <div class="module">
-
-            <h2>MEF 2 (Coef 2)</h2>
-
-            <input type="number" min="0" max="20" id="td5" placeholder="TD">
-
-            <input type="number" min="0" max="20" id="exam5" placeholder="Examen">
-
-        </div>
-
-        <div class="module">
-
-            <h2>Traitements Thermiques (Coef 2)</h2>
-
-            <input type="number" min="0" max="20" id="td6" placeholder="TD">
-
-            <input type="number" min="0" max="20" id="exam6" placeholder="Examen">
-
-        </div>
-
-        <div class="module">
-
-            <h2>IA Appliquée (Coef 2)</h2>
-
-            <input type="number" min="0" max="20" id="td7" placeholder="TD">
-
-            <input type="number" min="0" max="20" id="exam7" placeholder="Examen">
-
-        </div>
-
-        <div class="module">
-
-            <h2>TP Essais Mécaniques 2 (Coef 1)</h2>
-
-            <input type="number" min="0" max="20" id="tp" placeholder="Note TP">
-
-        </div>
-
-        <div class="module">
-
-            <h2>Respect des Normes (Coef 1)</h2>
-
-            <input type="number" min="0" max="20" id="normes" placeholder="Note">
-
-        </div>
-
-        <button onclick="calculer()">
-            Calculer la Moyenne
-        </button>
-
-        <h2 id="resultat"></h2>
 
     </div>
 
-    <script>
+    <div class="hero">
 
-        function calculer(){
+        <h1>Calculateur de Moyenne Semestre 2</h1>
 
-            let total = 0;
+        <p>Master 2 Génie des Matériaux Mécaniques</p>
 
-            total += ((parseFloat(td1.value)||0)*0.4 + (parseFloat(exam1.value)||0)*0.6) * 3;
+        <div class="prof-box">
 
-            total += ((parseFloat(td2.value)||0)*0.4 + (parseFloat(exam2.value)||0)*0.6) * 2;
+            <img src="{{ url_for('static', filename='images/prof.jpg') }}">
 
-            total += ((parseFloat(td3.value)||0)*0.4 + (parseFloat(exam3.value)||0)*0.6) * 2;
+            <h2>Notre Professeur 👨‍🏫</h2>
 
-            total += ((parseFloat(td4.value)||0)*0.4 + (parseFloat(exam4.value)||0)*0.6) * 2;
+        </div>
 
-            total += ((parseFloat(td5.value)||0)*0.4 + (parseFloat(exam5.value)||0)*0.6) * 2;
+    </div>
 
-            total += ((parseFloat(td6.value)||0)*0.4 + (parseFloat(exam6.value)||0)*0.6) * 2;
-
-            total += ((parseFloat(td7.value)||0)*0.4 + (parseFloat(exam7.value)||0)*0.6) * 2;
-
-            total += (parseFloat(tp.value)||0);
-
-            total += (parseFloat(normes.value)||0);
-
-            let moyenne = total / 17;
-
-            let resultat = document.getElementById("resultat");
-
-            resultat.innerHTML = "Moyenne S2 = " + moyenne.toFixed(2);
-
-            if(moyenne >= 10){
-
-                resultat.className = "vert";
-            }
-
-            else{
-
-                resultat.className = "rouge";
-            }
-
-        }
-
-    </script>
-<div class="promotion">
-
-    <h1 class="promo-title">Notre Promotion 🎓</h1>
+    <h1 class="promo-title">
+        Notre Promotion 🎓
+    </h1>
 
     <div class="cards">
 
         <div class="student">
+
             <img src="{{ url_for('static', filename='images/anis samoun.jpg') }}">
+
             <h2>Anis Samoun</h2>
+
+            <p>Étudiant Master 2</p>
+
         </div>
 
         <div class="student">
+
             <img src="{{ url_for('static', filename='images/delegui.jpg') }}">
+
             <h2>Delegui</h2>
+
+            <p>Étudiant Master 2</p>
+
         </div>
 
         <div class="student">
+
             <img src="{{ url_for('static', filename='images/lyes messoudi.jpg') }}">
+
             <h2>Lyes Messoudi</h2>
+
+            <p>Étudiant Master 2</p>
+
         </div>
 
         <div class="student">
+
             <img src="{{ url_for('static', filename='images/mamiiin.jpg') }}">
+
             <h2>Mamiiin</h2>
+
+            <p>Étudiant Master 2</p>
+
         </div>
 
     </div>
 
-</div>
-</body>
+    <div class="calc-section">
 
+        <div class="calc-box">
+
+            <h2>📘 Calculer votre moyenne</h2>
+
+            <div class="module">
+
+                <label>Note TD</label>
+
+                <input type="number" min="0" max="20">
+            </div>
+
+            <div class="module">
+
+                <label>Note Examen</label>
+
+                <input type="number" min="0" max="20">
+            </div>
+
+            <button>
+                Calculer
+            </button>
+
+        </div>
+
+        <div class="result-box">
+
+            <h2>🏆 Résultat</h2>
+
+            <div class="result">
+                0.00
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+
+        Sponsor officiel de la promotion :
+        <span>Master 2 Génie des Matériaux Mécaniques</span>
+
+    </footer>
+
+</div>
+
+</body>
 </html>
