@@ -5,7 +5,9 @@
 
     <meta charset="UTF-8">
 
-    <title>Génie des Matériaux Mécaniques</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Accueil - Calculateur S2</title>
 
     <style>
 
@@ -20,18 +22,24 @@
 
             height:100vh;
 
+            overflow:hidden;
+
+            background:
+            linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.85)),
+            url("https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1920");
+
+            background-size:cover;
+
+            background-position:center;
+
             display:flex;
 
             justify-content:center;
 
             align-items:center;
-
-            overflow:hidden;
-
-            background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
         }
 
-        .background{
+        .particles{
 
             position:absolute;
 
@@ -42,159 +50,199 @@
             overflow:hidden;
         }
 
-        .circle{
+        .particles span{
 
             position:absolute;
 
+            display:block;
+
+            width:12px;
+
+            height:12px;
+
+            background:#7c5cff;
+
             border-radius:50%;
 
-            background:rgba(255,255,255,0.08);
+            animation:animate 15s linear infinite;
 
-            animation:move 10s infinite alternate;
+            bottom:-150px;
         }
 
-        .circle:nth-child(1){
+        .particles span:nth-child(1){
 
-            width:300px;
-            height:300px;
-
-            top:-100px;
-            left:-100px;
-        }
-
-        .circle:nth-child(2){
-
-            width:200px;
-            height:200px;
-
-            bottom:-50px;
-            right:-50px;
-        }
-
-        .circle:nth-child(3){
-
-            width:150px;
-            height:150px;
-
-            top:60%;
             left:10%;
+
+            animation-duration:12s;
+
+            width:15px;
+
+            height:15px;
+        }
+
+        .particles span:nth-child(2){
+
+            left:25%;
+
+            animation-duration:18s;
+        }
+
+        .particles span:nth-child(3){
+
+            left:40%;
+
+            animation-duration:10s;
+        }
+
+        .particles span:nth-child(4){
+
+            left:60%;
+
+            animation-duration:14s;
+        }
+
+        .particles span:nth-child(5){
+
+            left:75%;
+
+            animation-duration:20s;
+
+            width:18px;
+
+            height:18px;
+        }
+
+        .particles span:nth-child(6){
+
+            left:90%;
+
+            animation-duration:16s;
         }
 
         .card{
 
             position:relative;
 
-            width:550px;
+            width:700px;
 
-            padding:45px;
+            padding:60px;
 
-            border-radius:30px;
+            border-radius:35px;
 
-            background:rgba(255,255,255,0.12);
+            background:rgba(255,255,255,0.08);
 
-            backdrop-filter:blur(15px);
+            backdrop-filter:blur(20px);
 
-            box-shadow:0 8px 32px rgba(0,0,0,0.35);
+            border:1px solid rgba(255,255,255,0.1);
 
             text-align:center;
+
+            box-shadow:0 0 40px rgba(0,0,0,0.5);
 
             animation:fade 1.5s ease;
         }
 
-        .icon{
-
-            font-size:65px;
-
-            margin-bottom:20px;
-
-            animation:float 3s infinite ease-in-out;
-        }
-
         .prof{
 
-            width:160px;
+            width:180px;
 
-            height:160px;
+            height:180px;
 
             border-radius:50%;
 
             object-fit:cover;
 
-            border:5px solid white;
+            border:6px solid #7c5cff;
+
+            box-shadow:0 0 30px #7c5cff;
 
             margin-bottom:25px;
-
-            box-shadow:0 0 30px rgba(255,255,255,0.5);
-
-            animation:zoom 3s infinite alternate;
-        }
-
-        h1{
-
-            color:white;
-
-            font-size:42px;
-
-            margin-bottom:10px;
-
-            text-shadow:0 0 10px rgba(255,255,255,0.3);
-        }
-
-        h2{
-
-            color:#dfefff;
-
-            font-size:24px;
-
-            margin-bottom:25px;
-
-            font-weight:normal;
-        }
-
-        p{
-
-            color:white;
-
-            font-size:18px;
-
-            margin-bottom:35px;
-
-            line-height:1.6;
-        }
-
-        a{
-
-            text-decoration:none;
-        }
-
-        button{
-
-            padding:16px 40px;
-
-            border:none;
-
-            border-radius:15px;
-
-            background:white;
-
-            color:#203a43;
-
-            font-size:20px;
-
-            font-weight:bold;
-
-            cursor:pointer;
 
             transition:0.4s;
         }
 
-        button:hover{
+        .prof:hover{
 
-            transform:scale(1.12);
+            transform:scale(1.08) rotate(2deg);
+        }
 
-            background:#dfefff;
+        h1{
 
-            box-shadow:0 0 20px rgba(255,255,255,0.5);
+            font-size:65px;
+
+            margin-bottom:20px;
+
+            background:linear-gradient(to right,#4facfe,#a855f7);
+
+            -webkit-background-clip:text;
+
+            -webkit-text-fill-color:transparent;
+        }
+
+        p{
+
+            font-size:24px;
+
+            color:#ddd;
+
+            line-height:1.6;
+
+            margin-bottom:40px;
+        }
+
+        .btn{
+
+            display:inline-block;
+
+            padding:18px 45px;
+
+            border-radius:18px;
+
+            background:linear-gradient(to right,#4facfe,#7c5cff);
+
+            color:white;
+
+            font-size:22px;
+
+            text-decoration:none;
+
+            transition:0.4s;
+
+            box-shadow:0 0 20px rgba(124,92,255,0.5);
+        }
+
+        .btn:hover{
+
+            transform:translateY(-5px) scale(1.05);
+
+            box-shadow:0 0 35px rgba(124,92,255,0.9);
+        }
+
+        .icons{
+
+            margin-top:35px;
+
+            font-size:35px;
+
+            animation:float 3s infinite ease-in-out;
+        }
+
+        footer{
+
+            position:absolute;
+
+            bottom:20px;
+
+            color:#aaa;
+
+            font-size:18px;
+        }
+
+        footer span{
+
+            color:#7c5cff;
+
+            font-weight:bold;
         }
 
         @keyframes fade{
@@ -203,7 +251,7 @@
 
                 opacity:0;
 
-                transform:translateY(50px);
+                transform:translateY(40px);
             }
 
             to{
@@ -221,7 +269,7 @@
             }
 
             50%{
-                transform:translateY(-12px);
+                transform:translateY(-10px);
             }
 
             100%{
@@ -229,25 +277,52 @@
             }
         }
 
-        @keyframes zoom{
+        @keyframes animate{
 
-            from{
-                transform:scale(1);
+            0%{
+
+                transform:translateY(0) rotate(0deg);
+
+                opacity:1;
             }
 
-            to{
-                transform:scale(1.05);
+            100%{
+
+                transform:translateY(-1200px) rotate(720deg);
+
+                opacity:0;
             }
         }
 
-        @keyframes move{
+        @media(max-width:768px){
 
-            from{
-                transform:translateY(0px);
+            .card{
+
+                width:95%;
+
+                padding:35px;
             }
 
-            to{
-                transform:translateY(40px);
+            h1{
+
+                font-size:38px;
+            }
+
+            p{
+
+                font-size:18px;
+            }
+
+            .prof{
+
+                width:130px;
+
+                height:130px;
+            }
+
+            .btn{
+
+                width:100%;
             }
         }
 
@@ -257,38 +332,61 @@
 
 <body>
 
-    <div class="background">
+    <div class="particles">
 
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
 
     </div>
 
     <div class="card">
 
-        <div class="icon">⚙️🔩🛠️</div>
-
         <img src="{{ url_for('static', filename='images/prof.jpg') }}" class="prof">
 
-        <h1>Génie des Matériaux Mécaniques</h1>
-
-        <h2>Master 2</h2>
+        <h1>Calculateur Moyenne S2</h1>
 
         <p>
-            Bienvenue dans le calculateur intelligent de moyenne du semestre 2.
-            Calculez rapidement vos résultats universitaires avec une interface moderne et interactive.
+
+           <p>
+
+    Bienvenue dans la plateforme officielle du
+    Master 1 Génie des Matériaux Mécaniques.
+    Une expérience moderne et interactive conçue
+    pour faciliter le calcul des moyennes universitaires.
+
+    <br><br>
+
+    🎓 Sponsoring officiel :
+    <strong>Mr Bouklouch</strong>
+
+</p>
+
         </p>
 
-        <a href="/calcul">
+        <a href="/calcul" class="btn">
 
-            <button>
-                Commencer
-            </button>
+            Commencer 🚀
 
         </a>
 
+        <div class="icons">
+
+            ⚙️ 🔩 🛠️ 🎓
+
+        </div>
+
     </div>
+
+    <footer>
+
+        Sponsor officiel :
+        <span>Master 2 GMM 2026</span>
+
+    </footer>
 
 </body>
 
