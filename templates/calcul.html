@@ -10,6 +10,95 @@
     <title>Calculateur Moyenne S2</title>
 
     <style>
+        .promotion{
+
+    margin-top:70px;
+
+    text-align:center;
+}
+
+.promo-title{
+
+    color:white;
+
+    font-size:40px;
+
+    margin-bottom:40px;
+
+    animation:fade 2s ease;
+}
+
+.cards{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:30px;
+}
+
+.student{
+
+    width:220px;
+
+    padding:20px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,0.1);
+
+    backdrop-filter:blur(15px);
+
+    transition:0.4s;
+
+    box-shadow:0 0 20px rgba(0,0,0,0.3);
+}
+
+.student:hover{
+
+    transform:translateY(-10px) scale(1.05);
+}
+
+.student img{
+
+    width:140px;
+
+    height:140px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:4px solid white;
+
+    margin-bottom:15px;
+}
+
+.student h2{
+
+    color:white;
+
+    font-size:22px;
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+    }
+}
 
         *{
             margin:0;
@@ -378,7 +467,35 @@
         }
 
     </script>
+<div class="promotion">
 
+    <h1 class="promo-title">Notre Promotion 🎓</h1>
+
+    <div class="cards">
+
+        <div class="student">
+            <img src="{{ url_for('static', filename='images/anis samoun.jpg') }}">
+            <h2>Anis Samoun</h2>
+        </div>
+
+        <div class="student">
+            <img src="{{ url_for('static', filename='images/delegui.jpg') }}">
+            <h2>Delegui</h2>
+        </div>
+
+        <div class="student">
+            <img src="{{ url_for('static', filename='images/lyes messoudi.jpg') }}">
+            <h2>Lyes Messoudi</h2>
+        </div>
+
+        <div class="student">
+            <img src="{{ url_for('static', filename='images/mamiiin.jpg') }}">
+            <h2>Mamiiin</h2>
+        </div>
+
+    </div>
+
+</div>
 </body>
 
 </html>
